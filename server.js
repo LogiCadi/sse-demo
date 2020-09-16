@@ -8,10 +8,7 @@ http.createServer(function (req, res) {
         "Access-Control-Allow-Origin": '*',
     });
 
-    interval = setInterval(function () {
-        res.write("data: " + JSON.stringify({
-            id: 1,
-            date: (new Date())
-        }) + "\n\n");
+    setInterval(function () {
+        res.write(`data: ${new Date}\n\n`);
     }, 1000);
 }).listen(8844);
