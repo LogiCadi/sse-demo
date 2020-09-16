@@ -1,6 +1,6 @@
-# 1 分钟了解 Server-Sent Events
+## 1 分钟了解 Server-Sent Events
 
-## 服务器向浏览器推送信息，除了 WebSocket，还有一种方法：Server-Sent Events（以下简称 SSE）
+### 服务器向浏览器推送信息，除了 WebSocket，还有一种方法：Server-Sent Events（以下简称 SSE）
 
 SSE 相比 WebSocket 更加轻量，它基于 http 协议
 WebSocket 是双向通信，SSE 只能服务端向客户端推送数据
@@ -39,7 +39,7 @@ source.onmessage = function (event) {
 
 `[field]: value\n\n`
 
-field 可取 data、event、id、retry，一般取 data
+field 可取 data、event、id、retry，常见的取 data
 
 ```js
 `data: ${内容}\n\n`;
@@ -70,7 +70,10 @@ node server
 npx live-server
 ```
 
-参考：
+如果想要用于即时通讯，建议还是使用 WebSocket 来实现，
+目前看来 SSE 应用到的地方较少，主要还是代替轮询，而且 IE/Edge 好像还不支持
+
+### 参考链接：
 
 - [完整示例](https://github.com/LogiCadi/sse-demo)
 - [Server-Sent Events 教程](http://www.ruanyifeng.com/blog/2017/05/server-sent_events.html)
